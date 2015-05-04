@@ -18,7 +18,6 @@ _ability(&ability)
     _targetPosition = NULL;
     _baseStats["moveSpeed"] = moveSpeed;
     std::cout << "Champion created\n";
-    
 }
 
 Champion::~Champion()
@@ -97,9 +96,12 @@ void Champion::updateCooldowns() {
         if (currentMods->size() > 0) {
             std::vector<StatModifier*>::iterator iter;
             for(iter = currentMods->begin(); iter != currentMods->end();){
-                (*iter)->update();
-                if ((*iter)->hasExpired()) {
+                StatModifier *modifier = (*iter);
+                modifier->update();
+                if (modifier->hasExpired()) {
                     currentMods->erase(iter);
+                    std::cout << "modified removed \n";
+                    delete modifier;
                 } else {
                     ++iter;
                 }
@@ -110,7 +112,6 @@ void Champion::updateCooldowns() {
 
 void Champion::addFlatStatModifier(StatModifier &statModifier)
 {
-    std::cout << "Stuff";
     // seems a little clumsy to get the statID out
     _flatModifiers[statModifier.getStatID()].push_back(&statModifier);
 }

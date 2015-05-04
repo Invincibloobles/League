@@ -14,7 +14,6 @@
 SpeedBoostAbility::SpeedBoostAbility(int manaCost, int castRange, int cooldownTime)
 :Ability(manaCost, castRange, cooldownTime)
 {
-//    _flatSpeedBoost = new StatModifier("SpeedBoostAbility", "moveSpeed", 20, 120);
     std::cout << "SpeedBoostAbility created\n";
 }
 

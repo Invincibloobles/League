@@ -21,7 +21,7 @@ private:
 	int _mana, _health;
     Ability* _ability;
     Point const * _targetPosition;
-    std::map <std::string, int> _baseStats; // may not need to be a map actually
+    std::map <std::string, int> _baseStats;
     std::map <std::string, std::vector <StatModifier*>> _flatModifiers;
 //    std::map <std::string, int> _percentageModifiers; TODO: later
     

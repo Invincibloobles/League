@@ -14,7 +14,12 @@ _statID(statID),
 _flatStatAdjustment(flatStatAdjustment),
 _duration(duration)
 {
-    
+    std::cout << "Modifier created \n";
+}
+
+StatModifier::~StatModifier()
+{
+   std::cout << "Modifier destroyed \n";
 }
 
 void StatModifier::update()

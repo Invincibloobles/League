@@ -13,7 +13,7 @@
 #include "StatModifier.h"
 
 class SpeedBoostAbility : public Ability {
-    StatModifier *_flatSpeedBoost;
+
 public:
     void cast(Champion &owner, const Point &castLocation);
     SpeedBoostAbility(int manaCost, int castRange, int cooldownTime);

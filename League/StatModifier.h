@@ -9,7 +9,7 @@
 #ifndef __League__StatModifier__
 #define __League__StatModifier__
 
-#include <string>
+#include <iostream>
 
 class StatModifier {
     std::string _sourceName;
