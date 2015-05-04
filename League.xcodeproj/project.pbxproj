@@ -9,10 +9,6 @@
 /* Begin PBXBuildFile section */
 		832C94D41ACEB710007C0295 /* ResourcePath.mm in Sources */ = {isa = PBXBuildFile; fileRef = 832C94D31ACEB710007C0295 /* ResourcePath.mm */; };
 		832C94D71ACEB710007C0295 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832C94D61ACEB710007C0295 /* main.cpp */; };
-		832C94DA1ACEB710007C0295 /* cute_image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 832C94D91ACEB710007C0295 /* cute_image.jpg */; };
-		832C94DC1ACEB710007C0295 /* nice_music.ogg in Resources */ = {isa = PBXBuildFile; fileRef = 832C94DB1ACEB710007C0295 /* nice_music.ogg */; };
-		832C94DE1ACEB710007C0295 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 832C94DD1ACEB710007C0295 /* sansation.ttf */; };
-		832C94E01ACEB710007C0295 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 832C94DF1ACEB710007C0295 /* icon.png */; };
 		832C94FA1ACEB7A0007C0295 /* Ability.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832C94F21ACEB7A0007C0295 /* Ability.cpp */; };
 		832C94FB1ACEB7A0007C0295 /* Champion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832C94F41ACEB7A0007C0295 /* Champion.cpp */; };
 		832C94FD1ACEB7A0007C0295 /* TestAbility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832C94F81ACEB7A0007C0295 /* TestAbility.cpp */; };
@@ -26,10 +22,6 @@
 		832C94D31ACEB710007C0295 /* ResourcePath.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ResourcePath.mm; sourceTree = "<group>"; };
 		832C94D51ACEB710007C0295 /* ResourcePath.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ResourcePath.hpp; sourceTree = "<group>"; };
 		832C94D61ACEB710007C0295 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		832C94D91ACEB710007C0295 /* cute_image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = cute_image.jpg; sourceTree = "<group>"; };
-		832C94DB1ACEB710007C0295 /* nice_music.ogg */ = {isa = PBXFileReference; lastKnownFileType = file; path = nice_music.ogg; sourceTree = "<group>"; };
-		832C94DD1ACEB710007C0295 /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
-		832C94DF1ACEB710007C0295 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 		832C94F21ACEB7A0007C0295 /* Ability.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Ability.cpp; sourceTree = "<group>"; };
 		832C94F31ACEB7A0007C0295 /* Ability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ability.h; sourceTree = "<group>"; };
 		832C94F41ACEB7A0007C0295 /* Champion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Champion.cpp; sourceTree = "<group>"; };
@@ -101,10 +93,6 @@
 		832C94D81ACEB710007C0295 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				832C94D91ACEB710007C0295 /* cute_image.jpg */,
-				832C94DB1ACEB710007C0295 /* nice_music.ogg */,
-				832C94DD1ACEB710007C0295 /* sansation.ttf */,
-				832C94DF1ACEB710007C0295 /* icon.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -172,10 +160,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				832C94E01ACEB710007C0295 /* icon.png in Resources */,
-				832C94DE1ACEB710007C0295 /* sansation.ttf in Resources */,
-				832C94DC1ACEB710007C0295 /* nice_music.ogg in Resources */,
-				832C94DA1ACEB710007C0295 /* cute_image.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
