@@ -90,43 +90,84 @@ void Champion::updateTargetPosition(const Point &newTarget)
 void Champion::updateCooldowns() {
     _ability->update();
     // update each current buff as well
-    // for each base stat do the following
-    if (_flatModifiers.count("moveSpeed") > 0) {
-        std::vector<StatModifier*> *currentMods = &_flatModifiers.find("moveSpeed")->second;
-        if (currentMods->size() > 0) {
-            std::vector<StatModifier*>::iterator iter;
-            for(iter = currentMods->begin(); iter != currentMods->end();){
-                StatModifier *modifier = (*iter);
-                modifier->update();
-                if (modifier->hasExpired()) {
-                    currentMods->erase(iter);
-                    std::cout << "modified removed \n";
-                    delete modifier;
-                } else {
-                    ++iter;
-                }
+
+    std::map<std::string, std::vector<StatModifier*>>::iterator mapIter;
+    std::vector<StatModifier*>::iterator modIter;
+
+    for (mapIter = _flatModifiers.begin(); mapIter != _flatModifiers.end();) {
+        std::vector<StatModifier*> *currentMods = &mapIter->second;
+        for (modIter = currentMods->begin(); modIter != currentMods->end();) {
+            StatModifier *modifier = (*modIter);
+            modifier->update();
+            if (modifier->hasExpired()) {
+                currentMods->erase(modIter);
+                std::cout << "modified removed \n";
+                delete modifier;
+            } else {
+                ++mapIter;
             }
+        }
+        
+        // if size of currentMods is now 0
+        if (currentMods->size() < 1) {
+            // delete entry from map
+            _flatModifiers.erase(mapIter);
+
+        } else {
+             // otherwise increment mapIter
+            mapIter++;
         }
     }
 }
 
-void Champion::addFlatStatModifier(StatModifier &statModifier)
+void Champion::addStatModifier(StatModifier &statModifier)
 {
-    // seems a little clumsy to get the statID out
-    _flatModifiers[statModifier.getStatID()].push_back(&statModifier);
+    ModifierType modType = statModifier.getType();
+    if (modType == ModifierType::FLAT) {
+        _flatModifiers[statModifier.getStatID()].push_back(&statModifier);
+    } else if (modType == ModifierType::ADDATIVE) {
+        _addativeModifiers[statModifier.getStatID()].push_back(&statModifier);
+    } else if (modType == ModifierType::MULTIPLCIATIVE) {
+        
+    } else {
+        std::cout << "Unrecognised StatModifer type";
+    }
 }
 
 int Champion::getStatWithModifiers(std::string statID) const
 {
     int baseStat = _baseStats.find(statID)->second;
-    int modifiedStat = baseStat;
+    float modifiedStat = baseStat;
+    
+    // declare once
+    std::vector<StatModifier*> mods;
+    std::vector<StatModifier*>::iterator iter;
+    
+    // apply flat modifiers first
     if (_flatModifiers.count(statID) > 0) {
-        std::vector<StatModifier*> currentMods = _flatModifiers.find(statID)->second;
-        std::vector<StatModifier*>::iterator iter;
-        for(iter = currentMods.begin(); iter != currentMods.end(); iter++){
-            modifiedStat += (*iter)->getFlatStatAdjust();
+        mods = _flatModifiers.find(statID)->second;
+        for(iter = mods.begin(); iter != mods.end(); iter++){
+            if ((*iter)->getType() == ModifierType::FLAT) {
+                modifiedStat += (*iter)->getStatAdjustment();
+            }
         }
     }
+    
+    // apply addative modifiers
+    if (_addativeModifiers.count(statID) > 0) {
+        int addativePercentage = 1;
+        mods = _addativeModifiers.find(statID)->second;
+        for(iter = mods.begin(); iter != mods.end(); iter++){
+            if ((*iter)->getType() == ModifierType::ADDATIVE) {
+                addativePercentage += (*iter)->getStatAdjustment();
+            }
+        }
+        float addativeBonus = addativePercentage * modifiedStat;
+        modifiedStat = addativeBonus;
+    }
+    
+    // multiplicative bonus calcs go here. Order specific?
+    
     return modifiedStat;
 }
 

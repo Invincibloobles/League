@@ -2,27 +2,30 @@
 //  StatModifier.h
 //  League
 //
-//  Created by Chris England on 03/05/2015.
+//  Created by Chris England on 08/05/2015.
 //  Copyright (c) 2015 Chris England. All rights reserved.
 //
 
 #ifndef __League__StatModifier__
 #define __League__StatModifier__
 
-#include <iostream>
+#include <string>
+#include "ModifierType.h"
 
 class StatModifier {
     std::string _sourceName;
     std::string _statID;
-    int _flatStatAdjustment;
+    float _statAdjustment;
     int _duration;
+    ModifierType _type;
     
 public:
-    StatModifier(std::string sourceName, std::string statID, int flatStatAdjustment, int duration);
+    StatModifier(std::string sourceName, std::string statID, float statAdjustment, int duration, ModifierType type);
     ~StatModifier();
     
     inline std::string getStatID() const {return _statID;};
-    inline int getFlatStatAdjust() const {return _flatStatAdjustment;};
+    inline float getStatAdjustment() const {return _statAdjustment;};
+    inline ModifierType getType() const {return _type;};
     inline bool hasExpired() const {return _duration <= 0;};
     void update();
 };

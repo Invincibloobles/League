@@ -10,6 +10,7 @@
 
 #include <iostream>
 #include "Champion.h"
+#include "ModifierType.h"
 
 SpeedBoostAbility::SpeedBoostAbility(int manaCost, int castRange, int cooldownTime)
 :Ability(manaCost, castRange, cooldownTime)
@@ -26,7 +27,7 @@ void SpeedBoostAbility::cast(Champion &owner, const Point &castLocation)
 {
     std::cout << "SpeedBoostAbility casted\n";
     // apply speed boost to owner
-    owner.addFlatStatModifier(*new StatModifier("SpeedBoostAbility", "moveSpeed", 20, 30));
+    owner.addStatModifier(*new StatModifier("SpeedBoostAbility", "moveSpeed", 0.2, 30, ModifierType::FLAT));
     setCurrentCooldownTimer(getCooldownTime());
 }
 

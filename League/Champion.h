@@ -23,6 +23,7 @@ private:
     Point const * _targetPosition;
     std::map <std::string, int> _baseStats;
     std::map <std::string, std::vector <StatModifier*>> _flatModifiers;
+    std::map <std::string, std::vector <StatModifier*>> _addativeModifiers;
 //    std::map <std::string, int> _percentageModifiers; TODO: later
     
     void updateCooldowns();
@@ -37,7 +38,7 @@ public:
 	void update();
     void updateTargetPosition(Point const &newTarget);
     void draw(sf::RenderTexture &texture);
-    void addFlatStatModifier(StatModifier &statModifier);
+    void addStatModifier(StatModifier &statModifier);
 };
 
 #endif /* defined(__FakeLoL__Champion__) */

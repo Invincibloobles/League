@@ -12,8 +12,8 @@
 		832C94FA1ACEB7A0007C0295 /* Ability.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832C94F21ACEB7A0007C0295 /* Ability.cpp */; };
 		832C94FB1ACEB7A0007C0295 /* Champion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832C94F41ACEB7A0007C0295 /* Champion.cpp */; };
 		832C94FD1ACEB7A0007C0295 /* TestAbility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832C94F81ACEB7A0007C0295 /* TestAbility.cpp */; };
+		838C461D1AFD3C2600C12047 /* StatModifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838C461B1AFD3C2600C12047 /* StatModifier.cpp */; };
 		83F601051AF65F2A00AFCC8F /* SpeedBoostAbility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83F601031AF65F2A00AFCC8F /* SpeedBoostAbility.cpp */; };
-		83F601091AF6731D00AFCC8F /* StatModifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83F601071AF6731D00AFCC8F /* StatModifier.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,10 +29,11 @@
 		832C94F71ACEB7A0007C0295 /* Point.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Point.h; sourceTree = "<group>"; };
 		832C94F81ACEB7A0007C0295 /* TestAbility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TestAbility.cpp; sourceTree = "<group>"; };
 		832C94F91ACEB7A0007C0295 /* TestAbility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestAbility.h; sourceTree = "<group>"; };
+		838C461B1AFD3C2600C12047 /* StatModifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatModifier.cpp; sourceTree = "<group>"; };
+		838C461C1AFD3C2600C12047 /* StatModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatModifier.h; sourceTree = "<group>"; };
+		838C461E1AFD3CC200C12047 /* ModifierType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifierType.h; sourceTree = "<group>"; };
 		83F601031AF65F2A00AFCC8F /* SpeedBoostAbility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpeedBoostAbility.cpp; sourceTree = "<group>"; };
 		83F601041AF65F2A00AFCC8F /* SpeedBoostAbility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedBoostAbility.h; sourceTree = "<group>"; };
-		83F601071AF6731D00AFCC8F /* StatModifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StatModifier.cpp; sourceTree = "<group>"; };
-		83F601081AF6731D00AFCC8F /* StatModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatModifier.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +77,9 @@
 				832C94D61ACEB710007C0295 /* main.cpp */,
 				832C94D81ACEB710007C0295 /* Resources */,
 				832C94D11ACEB710007C0295 /* Supporting Files */,
-				83F601071AF6731D00AFCC8F /* StatModifier.cpp */,
-				83F601081AF6731D00AFCC8F /* StatModifier.h */,
+				838C461B1AFD3C2600C12047 /* StatModifier.cpp */,
+				838C461C1AFD3C2600C12047 /* StatModifier.h */,
+				838C461E1AFD3CC200C12047 /* ModifierType.h */,
 			);
 			path = League;
 			sourceTree = "<group>";
@@ -187,11 +189,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				83F601051AF65F2A00AFCC8F /* SpeedBoostAbility.cpp in Sources */,
-				83F601091AF6731D00AFCC8F /* StatModifier.cpp in Sources */,
 				832C94D71ACEB710007C0295 /* main.cpp in Sources */,
 				832C94FB1ACEB7A0007C0295 /* Champion.cpp in Sources */,
 				832C94FD1ACEB7A0007C0295 /* TestAbility.cpp in Sources */,
 				832C94FA1ACEB7A0007C0295 /* Ability.cpp in Sources */,
+				838C461D1AFD3C2600C12047 /* StatModifier.cpp in Sources */,
 				832C94D41ACEB710007C0295 /* ResourcePath.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
