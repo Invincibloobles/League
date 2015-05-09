@@ -27,7 +27,7 @@ void SpeedBoostAbility::cast(Champion &owner, const Point &castLocation)
 {
     std::cout << "SpeedBoostAbility casted\n";
     // apply speed boost to owner
-    owner.addStatModifier(*new StatModifier("SpeedBoostAbility", "moveSpeed", 0.2, 30, ModifierType::FLAT));
+    owner.addStatModifier(*new StatModifier("SpeedBoostAbility", "moveSpeed", 0.5, 30, ModifierType::ADDATIVE));
     setCurrentCooldownTimer(getCooldownTime());
 }
 

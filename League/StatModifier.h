@@ -18,7 +18,9 @@ class StatModifier {
     float _statAdjustment;
     int _duration;
     ModifierType _type;
-    
+
+protected:
+    inline void setStatAdjustment(float newStatAdjustment) {_statAdjustment = newStatAdjustment;};
 public:
     StatModifier(std::string sourceName, std::string statID, float statAdjustment, int duration, ModifierType type);
     ~StatModifier();
@@ -27,7 +29,7 @@ public:
     inline float getStatAdjustment() const {return _statAdjustment;};
     inline ModifierType getType() const {return _type;};
     inline bool hasExpired() const {return _duration <= 0;};
-    void update();
+    virtual void update();
 };
 
 #endif /* defined(__League__StatModifier__) */

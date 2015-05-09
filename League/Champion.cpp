@@ -93,8 +93,10 @@ void Champion::updateCooldowns() {
 
     std::map<std::string, std::vector<StatModifier*>>::iterator mapIter;
     std::vector<StatModifier*>::iterator modIter;
-
-    for (mapIter = _flatModifiers.begin(); mapIter != _flatModifiers.end();) {
+    
+    // DELETING FROM MAP IS BROKEN
+    
+    for (mapIter = _flatModifiers.begin(); mapIter != _flatModifiers.end(); ++mapIter) {
         std::vector<StatModifier*> *currentMods = &mapIter->second;
         for (modIter = currentMods->begin(); modIter != currentMods->end();) {
             StatModifier *modifier = (*modIter);
@@ -104,19 +106,16 @@ void Champion::updateCooldowns() {
                 std::cout << "modified removed \n";
                 delete modifier;
             } else {
-                ++mapIter;
+                ++modIter;
             }
         }
         
-        // if size of currentMods is now 0
-        if (currentMods->size() < 1) {
-            // delete entry from map
-            _flatModifiers.erase(mapIter);
-
-        } else {
-             // otherwise increment mapIter
-            mapIter++;
-        }
+//        // if size of currentMods is now 0
+//        if (currentMods->size() < 1) {
+//            // delete entry from map
+//            _flatModifiers.erase(mapIter); // nope
+            // also should delete
+//        }
     }
 }
 
@@ -127,7 +126,7 @@ void Champion::addStatModifier(StatModifier &statModifier)
         _flatModifiers[statModifier.getStatID()].push_back(&statModifier);
     } else if (modType == ModifierType::ADDATIVE) {
         _addativeModifiers[statModifier.getStatID()].push_back(&statModifier);
-    } else if (modType == ModifierType::MULTIPLCIATIVE) {
+    } else if (modType == ModifierType::MULTIPLICATIVE) {
         
     } else {
         std::cout << "Unrecognised StatModifer type";
@@ -155,8 +154,8 @@ int Champion::getStatWithModifiers(std::string statID) const
     
     // apply addative modifiers
     if (_addativeModifiers.count(statID) > 0) {
-        int addativePercentage = 1;
-        mods = _addativeModifiers.find(statID)->second;
+        float addativePercentage = 1;
+        mods = _addativeModifiers.find(statID)->second; // THIS LINE BREAKS
         for(iter = mods.begin(); iter != mods.end(); iter++){
             if ((*iter)->getType() == ModifierType::ADDATIVE) {
                 addativePercentage += (*iter)->getStatAdjustment();
@@ -166,8 +165,7 @@ int Champion::getStatWithModifiers(std::string statID) const
         modifiedStat = addativeBonus;
     }
     
-    // multiplicative bonus calcs go here. Order specific?
-    
+    // multiplicative bonus calcs go here.    
     return modifiedStat;
 }
 

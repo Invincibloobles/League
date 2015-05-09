@@ -12,7 +12,7 @@
 enum class ModifierType {
     FLAT,
     ADDATIVE,
-    MULTIPLCIATIVE
+    MULTIPLICATIVE
 };
 
 #endif
