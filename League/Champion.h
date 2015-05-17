@@ -27,6 +27,7 @@ private:
 //    std::map <std::string, int> _percentageModifiers; TODO: later
     
     void updateCooldowns();
+    void updateModifiers(std::map <std::string, std::vector <StatModifier*>> &modiferMap);
     int getStatWithModifiers(std::string statID) const;
 public:
 	Champion(int mana, int health, int moveSpeed, Ability &ability);

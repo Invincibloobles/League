@@ -198,11 +198,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "League/Champion.cpp"
-            timestampString = "452807855.809533"
+            timestampString = "453565040.660293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "123"
-            endingLineNumber = "123"
+            startingLineNumber = "127"
+            endingLineNumber = "127"
             landmarkName = "Champion::addStatModifier(StatModifier &amp;statModifier)"
             landmarkType = "5">
          </BreakpointContent>
@@ -214,11 +214,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "League/Champion.cpp"
-            timestampString = "452807855.809533"
+            timestampString = "453565040.660293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "138"
-            endingLineNumber = "138"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
             landmarkName = "Champion::getStatWithModifiers(std::string statID)"
             landmarkType = "5">
          </BreakpointContent>
@@ -230,11 +230,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "League/Champion.cpp"
-            timestampString = "452807855.809533"
+            timestampString = "453565040.660293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "147"
-            endingLineNumber = "147"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "Champion::getStatWithModifiers(std::string statID)"
             landmarkType = "5">
          </BreakpointContent>
@@ -246,11 +246,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "League/Champion.cpp"
-            timestampString = "452807206.1976"
+            timestampString = "453565040.660293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
             landmarkName = "Champion::updateCooldowns()"
             landmarkType = "5">
          </BreakpointContent>
@@ -262,11 +262,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "League/Champion.cpp"
-            timestampString = "452807855.809533"
+            timestampString = "453565040.660293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "157"
-            endingLineNumber = "157"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "Champion::getStatWithModifiers(std::string statID)"
             landmarkType = "5">
          </BreakpointContent>
@@ -294,11 +294,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "League/Champion.cpp"
-            timestampString = "452807855.809533"
+            timestampString = "453565040.660293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "99"
-            endingLineNumber = "99"
+            startingLineNumber = "93"
+            endingLineNumber = "93"
             landmarkName = "Champion::updateCooldowns()"
             landmarkType = "5">
          </BreakpointContent>
@@ -310,12 +310,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "League/Champion.cpp"
-            timestampString = "452807855.809533"
+            timestampString = "453565040.660293"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
-            landmarkName = "Champion::updateCooldowns()"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
+            landmarkName = "Champion::getStatWithModifiers(std::string statID)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -326,12 +326,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "League/Champion.cpp"
-            timestampString = "452807855.809533"
+            timestampString = "453565078.034099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "102"
             endingLineNumber = "102"
-            landmarkName = "Champion::updateCooldowns()"
+            landmarkName = "Champion::updateModifiers(std::map&lt;std::string, std::vector&lt;StatModifier *&gt; &gt; &amp;modiferMap)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -342,44 +342,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "League/Champion.cpp"
-            timestampString = "452807855.809533"
+            timestampString = "453565096.135845"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "Champion::updateModifiers(std::map&lt;std::string, std::vector&lt;StatModifier *&gt; &gt; &amp;modiferMap)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "League/Champion.cpp"
+            timestampString = "453565220.152519"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "Champion::updateModifiers(std::map&lt;std::string, std::vector&lt;StatModifier *&gt; &gt; &amp;modiferMap)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "League/Champion.cpp"
+            timestampString = "453565475.772345"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "105"
             endingLineNumber = "105"
-            landmarkName = "Champion::updateCooldowns()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "League/Champion.cpp"
-            timestampString = "452807878.031939"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
-            landmarkName = "Champion::updateCooldowns()"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "League/Champion.cpp"
-            timestampString = "452808396.336278"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "164"
-            endingLineNumber = "164"
-            landmarkName = "Champion::getStatWithModifiers(std::string statID)"
+            landmarkName = "Champion::updateModifiers(std::map&lt;std::string, std::vector&lt;StatModifier *&gt; &gt; &amp;modiferMap)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

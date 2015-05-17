@@ -89,14 +89,17 @@ void Champion::updateTargetPosition(const Point &newTarget)
 
 void Champion::updateCooldowns() {
     _ability->update();
-    // update each current buff as well
+    
+    updateModifiers(_flatModifiers);
+    updateModifiers(_addativeModifiers);
+}
 
+void Champion::updateModifiers(std::map<std::string, std::vector<StatModifier *> > &modiferMap)
+{
     std::map<std::string, std::vector<StatModifier*>>::iterator mapIter;
     std::vector<StatModifier*>::iterator modIter;
     
-    // DELETING FROM MAP IS BROKEN
-    
-    for (mapIter = _flatModifiers.begin(); mapIter != _flatModifiers.end(); ++mapIter) {
+    for (mapIter = modiferMap.begin(); mapIter != modiferMap.end(); ++mapIter) {
         std::vector<StatModifier*> *currentMods = &mapIter->second;
         for (modIter = currentMods->begin(); modIter != currentMods->end();) {
             StatModifier *modifier = (*modIter);
@@ -109,13 +112,6 @@ void Champion::updateCooldowns() {
                 ++modIter;
             }
         }
-        
-//        // if size of currentMods is now 0
-//        if (currentMods->size() < 1) {
-//            // delete entry from map
-//            _flatModifiers.erase(mapIter); // nope
-            // also should delete
-//        }
     }
 }
 
