@@ -23,13 +23,15 @@ protected:
     inline void setStatAdjustment(float newStatAdjustment) {_statAdjustment = newStatAdjustment;};
 public:
     StatModifier(std::string sourceName, std::string statID, float statAdjustment, int duration, ModifierType type);
-    ~StatModifier();
+    virtual ~StatModifier();
     
     inline std::string getStatID() const {return _statID;};
     inline float getStatAdjustment() const {return _statAdjustment;};
     inline ModifierType getType() const {return _type;};
     inline bool hasExpired() const {return _duration <= 0;};
-    virtual void update();
+    inline int getDuration() const {return _duration;};
+    inline void setDuration(int duration) {_duration = duration;};
+    virtual void update()=0;
 };
 
 #endif /* defined(__League__StatModifier__) */

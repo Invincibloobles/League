@@ -14,6 +14,7 @@
 		832C94FD1ACEB7A0007C0295 /* TestAbility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 832C94F81ACEB7A0007C0295 /* TestAbility.cpp */; };
 		838C461D1AFD3C2600C12047 /* StatModifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838C461B1AFD3C2600C12047 /* StatModifier.cpp */; };
 		838C46211AFD484600C12047 /* DecayingStatModifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838C461F1AFD484600C12047 /* DecayingStatModifier.cpp */; };
+		83E9A6F41B08DDEA00810CCF /* FixedDurationModifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A6F21B08DDEA00810CCF /* FixedDurationModifier.cpp */; };
 		83F601051AF65F2A00AFCC8F /* SpeedBoostAbility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83F601031AF65F2A00AFCC8F /* SpeedBoostAbility.cpp */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,8 @@
 		838C461E1AFD3CC200C12047 /* ModifierType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifierType.h; sourceTree = "<group>"; };
 		838C461F1AFD484600C12047 /* DecayingStatModifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecayingStatModifier.cpp; sourceTree = "<group>"; };
 		838C46201AFD484600C12047 /* DecayingStatModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecayingStatModifier.h; sourceTree = "<group>"; };
+		83E9A6F21B08DDEA00810CCF /* FixedDurationModifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FixedDurationModifier.cpp; sourceTree = "<group>"; };
+		83E9A6F31B08DDEA00810CCF /* FixedDurationModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixedDurationModifier.h; sourceTree = "<group>"; };
 		83F601031AF65F2A00AFCC8F /* SpeedBoostAbility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpeedBoostAbility.cpp; sourceTree = "<group>"; };
 		83F601041AF65F2A00AFCC8F /* SpeedBoostAbility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpeedBoostAbility.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +86,8 @@
 				838C461B1AFD3C2600C12047 /* StatModifier.cpp */,
 				838C461C1AFD3C2600C12047 /* StatModifier.h */,
 				838C461F1AFD484600C12047 /* DecayingStatModifier.cpp */,
+				83E9A6F21B08DDEA00810CCF /* FixedDurationModifier.cpp */,
+				83E9A6F31B08DDEA00810CCF /* FixedDurationModifier.h */,
 				838C46201AFD484600C12047 /* DecayingStatModifier.h */,
 				838C461E1AFD3CC200C12047 /* ModifierType.h */,
 			);
@@ -193,6 +198,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				83E9A6F41B08DDEA00810CCF /* FixedDurationModifier.cpp in Sources */,
 				838C46211AFD484600C12047 /* DecayingStatModifier.cpp in Sources */,
 				83F601051AF65F2A00AFCC8F /* SpeedBoostAbility.cpp in Sources */,
 				832C94D71ACEB710007C0295 /* main.cpp in Sources */,

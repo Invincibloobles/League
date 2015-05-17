@@ -9,20 +9,19 @@
 #ifndef __League__DecayingStatModifier__
 #define __League__DecayingStatModifier__
 
-#include "StatModifier.h"
+#include "FixedDurationModifier.h"
 #include <iostream>
 
-class DecayingStatModifier : public StatModifier {
+class DecayingStatModifier : public FixedDurationModifier {
     
     float _decayRate;
     
 public:
     
-    DecayingStatModifier(std::string sourceName, std::string statID, float statAdjustment, int duration, ModifierType type);
+    DecayingStatModifier(std::string sourceName, std::string statID, float statAdjustment, float endStatAdjustment, int duration, ModifierType type);
     ~DecayingStatModifier();
     void update();
 
 };
-
 
 #endif /* defined(__League__DecayingStatModifier__) */

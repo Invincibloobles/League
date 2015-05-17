@@ -10,7 +10,7 @@
 #define __League__SpeedBoostAbility__
 
 #include "Ability.h"
-#include "StatModifier.h"
+#include "FixedDurationModifier.h"
 
 class SpeedBoostAbility : public Ability {
 

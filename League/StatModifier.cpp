@@ -23,8 +23,3 @@ StatModifier::~StatModifier()
 {
     std::cout << "Modifier destroyed \n";
 }
-
-void StatModifier::update()
-{
-    _duration--;
-}

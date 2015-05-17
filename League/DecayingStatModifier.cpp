@@ -8,10 +8,10 @@
 
 #include "DecayingStatModifier.h"
 
-DecayingStatModifier::DecayingStatModifier(std::string sourceName, std::string statID, float statAdjustment, int duration, ModifierType type)
-: StatModifier(sourceName, statID, statAdjustment, duration, type)
+DecayingStatModifier::DecayingStatModifier(std::string sourceName, std::string statID, float statAdjustment, float endStatAdjustment, int duration, ModifierType type)
+: FixedDurationModifier(sourceName, statID, statAdjustment, duration, type)
 {
-    _decayRate = statAdjustment / duration;
+    _decayRate = (statAdjustment - endStatAdjustment) / duration;
 }
 
 DecayingStatModifier::~DecayingStatModifier()

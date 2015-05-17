@@ -167,10 +167,10 @@ int Champion::getStatWithModifiers(std::string statID) const
 
 void Champion::draw(sf::RenderTexture &texture)
 {
-    texture.clear(sf::Color(0, 150, 0));
+    texture.clear(sf::Color(35, 142, 35));
     sf::CircleShape championShape(10);
     championShape.setPosition(_location->x - 10, _location->y - 10);
-    championShape.setFillColor(sf::Color(200, 0, 200));
+    championShape.setFillColor(sf::Color(99, 184, 255));
     texture.draw(championShape);
     texture.display();
 }
