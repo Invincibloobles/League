@@ -23,7 +23,7 @@ SpeedBoostAbility::~SpeedBoostAbility()
     std::cout << "SpeedBoostAbility destroyed\n";
 }
 
-void SpeedBoostAbility::cast(Champion &owner, const Point &castLocation)
+void SpeedBoostAbility::cast(Champion &owner, sf::Vector2f castLocation)
 {
     std::cout << "SpeedBoostAbility casted\n";
     // apply speed boost to owner

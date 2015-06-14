@@ -17,10 +17,10 @@
 
 class Champion {
 private:
-	Point* _location;
+    sf::Vector2f _location;
 	int _mana, _health;
     Ability* _ability;
-    Point const * _targetPosition;
+    sf::Vector2f const * _targetPosition;
     std::map <std::string, int> _baseStats;
     std::map <std::string, std::vector <StatModifier*>> _flatModifiers;
     std::map <std::string, std::vector <StatModifier*>> _addativeModifiers;
@@ -33,11 +33,11 @@ public:
 	Champion(int mana, int health, int moveSpeed, Ability &ability);
 	~Champion();
     
-    void setLocation(double x, double y);
-    const Point& getLocation() const;
-    void castAbility(Point const &castLocation);
+    void setLocation(sf::Vector2f location);
+    const sf::Vector2f getLocation() const;
+    void castAbility(sf::Vector2f castLocation);
 	void update();
-    void updateTargetPosition(Point const &newTarget);
+    void updateTargetPosition(sf::Vector2f const &newTarget);
     void draw(sf::RenderTexture &texture);
     void addStatModifier(StatModifier &statModifier);
 };

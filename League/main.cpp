@@ -20,6 +20,7 @@
 #include "ResourcePath.hpp"
 #include "SpeedBoostAbility.h"
 #include "Champion.h"
+#include "Projectile.h"
 
 int main(int, char const**)
 {
@@ -46,10 +47,10 @@ int main(int, char const**)
                 std::cout << "Right click\n";
                 int x = event.mouseButton.x;
                 int y = event.mouseButton.y;
-                myChampion->updateTargetPosition(*new Point(x, y));
+                myChampion->updateTargetPosition(*new sf::Vector2f(x, y));
             } else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Q) {
                 sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-                myChampion->castAbility(Point(localPosition.x, localPosition.y));
+                myChampion->castAbility(sf::Vector2f(localPosition.x, localPosition.y));
             }
         }
         

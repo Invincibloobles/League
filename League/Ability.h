@@ -9,6 +9,7 @@
 #ifndef __FakeLoL__Ability__
 #define __FakeLoL__Ability__
 
+#include <SFML/Graphics.hpp>
 #include "Point.h"
 class Champion;
 
@@ -21,7 +22,7 @@ private:
 public:
     Ability(int manaCost, int castRange, int cooldownTime);
 	virtual ~Ability();
-    virtual void cast(Champion &owner, Point const &castLocation) = 0;
+    virtual void cast(Champion &owner, sf::Vector2f castLocation) = 0;
     virtual void update() = 0;
     
     inline int getCooldownTime() const {return _cooldownTime;};

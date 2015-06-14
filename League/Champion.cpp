@@ -14,7 +14,7 @@ Champion::Champion(int mana, int health, int moveSpeed, Ability &ability)
 _health(health),
 _ability(&ability)
 {
-    _location = new Point(0,0);
+    _location = sf::Vector2f(0,0);
     _targetPosition = NULL;
     _baseStats["moveSpeed"] = moveSpeed;
     std::cout << "Champion created\n";
@@ -22,7 +22,6 @@ _ability(&ability)
 
 Champion::~Champion()
 {
-    delete _location;
     if (_targetPosition != NULL) {
         delete _targetPosition;
     }
@@ -30,18 +29,17 @@ Champion::~Champion()
     std::cout << "Champion destroyed\n";
 }
 
-void Champion::setLocation(double x, double y)
+void Champion::setLocation(sf::Vector2f location)
 {
-    _location->x = x;
-    _location->y = y;
+    _location = location;
 }
 
-const Point& Champion::getLocation() const
+const sf::Vector2f Champion::getLocation() const
 {
-    return *_location;
+    return _location;
 }
 
-void Champion::castAbility(Point const &castLocation)
+void Champion::castAbility(sf::Vector2f castLocation)
 {
     if (!_ability->isOnCooldown()) {
         _ability->cast(*this, castLocation);
@@ -55,19 +53,19 @@ void Champion::update()
     bool targetReached = false;
     if (_targetPosition != NULL) {
         // move to target position
-        float xDiff = _targetPosition->x - _location->x;
-        float yDiff = _targetPosition->y - _location->y;
+        float xDiff = _targetPosition->x - _location.x;
+        float yDiff = _targetPosition->y - _location.y;
         float mag = sqrt((xDiff*xDiff)+(yDiff*yDiff));
         int moveSpeed = getStatWithModifiers("moveSpeed");
         if (mag <= moveSpeed) {
             targetReached = true;
-            _location->x = _targetPosition->x;
-            _location->y = _targetPosition->y;
+            _location.x = _targetPosition->x;
+            _location.y = _targetPosition->y;
         } else {
             float xUnit = xDiff/mag;
             float yUnit = yDiff/mag;
-            _location->x += xUnit * moveSpeed;
-            _location->y += yUnit * moveSpeed;
+            _location.x += xUnit * moveSpeed;
+            _location.y += yUnit * moveSpeed;
         }
         // if target position reached then delete _targetPosition
         if (targetReached) {
@@ -79,7 +77,7 @@ void Champion::update()
     updateCooldowns();
 }
 
-void Champion::updateTargetPosition(const Point &newTarget)
+void Champion::updateTargetPosition(const sf::Vector2f &newTarget)
 {
     delete _targetPosition;
     _targetPosition = &newTarget;
@@ -169,7 +167,7 @@ void Champion::draw(sf::RenderTexture &texture)
 {
     texture.clear(sf::Color(35, 142, 35));
     sf::CircleShape championShape(10);
-    championShape.setPosition(_location->x - 10, _location->y - 10);
+    championShape.setPosition(_location.x - 10, _location.y - 10);
     championShape.setFillColor(sf::Color(99, 184, 255));
     texture.draw(championShape);
     texture.display();
