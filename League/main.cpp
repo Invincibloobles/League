@@ -19,16 +19,15 @@
 // Here is a small helper for you ! Have a look.
 #include "ResourcePath.hpp"
 #include "SpeedBoostAbility.h"
-#include "Champion.h"
-#include "Projectile.h"
+#include "Game.h"
 
 int main(int, char const**)
 {
     // Create the main window
     sf::RenderWindow window(sf::VideoMode(800, 800), "Test");
     window.setFramerateLimit(60);
-    SpeedBoostAbility *myAbility = new SpeedBoostAbility(1, 2, 300);
-    Champion *myChampion = new Champion(100, 100, 5, *myAbility);
+    
+    Game game = Game();
     
     sf::RenderTexture texture;
     if (!texture.create(1600, 1200)) {
@@ -47,25 +46,23 @@ int main(int, char const**)
                 std::cout << "Right click\n";
                 int x = event.mouseButton.x;
                 int y = event.mouseButton.y;
-                myChampion->updateTargetPosition(*new sf::Vector2f(x, y));
+                game.setChampionTarget(*new sf::Vector2f(x, y));
             } else if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Q) {
                 sf::Vector2i localPosition = sf::Mouse::getPosition(window);
-                myChampion->castAbility(sf::Vector2f(localPosition.x, localPosition.y));
+                game.castChampionAbility(sf::Vector2f(localPosition.x, localPosition.y));
             }
         }
         
-        myChampion->update();
+        game.update();
         window.clear(sf::Color::White);
         sf::Sprite sprite;
-        myChampion->draw(texture);
+        game.draw(texture);
         sprite.setTexture(texture.getTexture());
         
         // draw everything here...
         window.draw(sprite);
         window.display();
     }
-    
-    delete myChampion;
 
     return EXIT_SUCCESS;
 }

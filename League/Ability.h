@@ -10,7 +10,6 @@
 #define __FakeLoL__Ability__
 
 #include <SFML/Graphics.hpp>
-#include "Point.h"
 class Champion;
 
 class Ability {

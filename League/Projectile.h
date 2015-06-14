@@ -19,7 +19,8 @@ class Projectile {
 public:
     Projectile(sf::Vector2f position, sf::Vector2f velocity, int hitRadius);
     virtual ~Projectile();
-    
+    virtual void update();
+    virtual void draw(sf::RenderTexture &texture);
 };
 
 #endif /* defined(__League__Projectile__) */

@@ -9,7 +9,6 @@
 #ifndef __FakeLoL__Champion__
 #define __FakeLoL__Champion__
 
-#include "Point.h"
 #include <iostream>
 #include <SFML/Graphics.hpp>
 #include "Ability.h"
