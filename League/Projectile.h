@@ -14,13 +14,18 @@
 
 class Projectile {
     sf::Vector2f _position;
-    sf::Vector2f _velocity;
     int _hitRadius;
+    // function ptr to collision function
 public:
-    Projectile(sf::Vector2f position, sf::Vector2f velocity, int hitRadius);
+    Projectile(sf::Vector2f position, int hitRadius);
     virtual ~Projectile();
-    virtual void update();
-    virtual void draw(sf::RenderTexture &texture);
+    virtual void update()=0;
+    virtual void draw(sf::RenderTexture &texture) const;
+    void checkForCollisions();
+    virtual bool keepAlive()=0;
+    
+    inline sf::Vector2f getPosition() const {return _position;};
+    inline void setPosition(sf::Vector2f position) {_position = position;};
 };
 
 #endif /* defined(__League__Projectile__) */

@@ -15,7 +15,7 @@
 class SpeedBoostAbility : public Ability {
 
 public:
-    void cast(Champion &owner, sf::Vector2f castLocation);
+    void cast(Game &gamestate, Champion &owner, sf::Vector2f castLocation);
     SpeedBoostAbility(int manaCost, int castRange, int cooldownTime);
     ~SpeedBoostAbility();
     

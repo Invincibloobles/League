@@ -31,6 +31,8 @@ public:
     void draw(sf::RenderTexture &texture);
     
     void registerProjectile(Projectile &projectile);
+    void processProjectileCollisions();
+    
 };
 
 #endif /* defined(__League__Game__) */

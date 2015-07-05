@@ -22,7 +22,7 @@ _ability(&ability)
 
 Champion::~Champion()
 {
-    if (_targetPosition != NULL) {
+    if (_targetPosition != nullptr) {
         delete _targetPosition;
     }
     delete _ability;
@@ -39,10 +39,10 @@ const sf::Vector2f Champion::getLocation() const
     return _location;
 }
 
-void Champion::castAbility(sf::Vector2f castLocation)
+void Champion::castAbility(Game &gamestate, sf::Vector2f castLocation)
 {
     if (!_ability->isOnCooldown()) {
-        _ability->cast(*this, castLocation);
+        _ability->cast(gamestate, *this, castLocation);
     } else {
         std::cout << "Ability is currently on cooldown \n";
     }
@@ -51,7 +51,7 @@ void Champion::castAbility(sf::Vector2f castLocation)
 void Champion::update()
 {
     bool targetReached = false;
-    if (_targetPosition != NULL) {
+    if (_targetPosition != nullptr) {
         // move to target position
         float xDiff = _targetPosition->x - _location.x;
         float yDiff = _targetPosition->y - _location.y;
@@ -71,7 +71,7 @@ void Champion::update()
         if (targetReached) {
             std::cout << "Target reached\n";
             delete _targetPosition;
-            _targetPosition = NULL;
+            _targetPosition = nullptr;
         }
     }
     updateCooldowns();
@@ -149,7 +149,7 @@ int Champion::getStatWithModifiers(std::string statID) const
     // apply addative modifiers
     if (_addativeModifiers.count(statID) > 0) {
         float addativePercentage = 1;
-        mods = _addativeModifiers.find(statID)->second; // THIS LINE BREAKS
+        mods = _addativeModifiers.find(statID)->second;
         for(iter = mods.begin(); iter != mods.end(); iter++){
             if ((*iter)->getType() == ModifierType::ADDATIVE) {
                 addativePercentage += (*iter)->getStatAdjustment();
@@ -165,10 +165,8 @@ int Champion::getStatWithModifiers(std::string statID) const
 
 void Champion::draw(sf::RenderTexture &texture)
 {
-    texture.clear(sf::Color(35, 142, 35));
     sf::CircleShape championShape(10);
     championShape.setPosition(_location.x - 10, _location.y - 10);
     championShape.setFillColor(sf::Color(99, 184, 255));
     texture.draw(championShape);
-    texture.display();
 }

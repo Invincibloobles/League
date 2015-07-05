@@ -13,6 +13,7 @@
 #include <SFML/Graphics.hpp>
 #include "Ability.h"
 #include "StatModifier.h"
+class Game;
 
 class Champion {
 private:
@@ -34,7 +35,7 @@ public:
     
     void setLocation(sf::Vector2f location);
     const sf::Vector2f getLocation() const;
-    void castAbility(sf::Vector2f castLocation);
+    void castAbility(Game &gamestate, sf::Vector2f castLocation);
 	void update();
     void updateTargetPosition(sf::Vector2f const &newTarget);
     void draw(sf::RenderTexture &texture);

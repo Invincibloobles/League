@@ -11,6 +11,7 @@
 
 #include <SFML/Graphics.hpp>
 class Champion;
+class Game;
 
 class Ability {
 private:
@@ -21,7 +22,7 @@ private:
 public:
     Ability(int manaCost, int castRange, int cooldownTime);
 	virtual ~Ability();
-    virtual void cast(Champion &owner, sf::Vector2f castLocation) = 0;
+    virtual void cast(Game &gamestate, Champion &owner, sf::Vector2f castLocation) = 0;
     virtual void update() = 0;
     
     inline int getCooldownTime() const {return _cooldownTime;};

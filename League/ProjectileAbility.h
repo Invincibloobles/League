@@ -11,17 +11,20 @@
 
 #include "Ability.h"
 #include <iostream>
+class Projectile;
 
 class ProjectileAbility : public Ability {
+    std::vector<Projectile*> _projectiles;
     
-    
+    const int MAX_RANGE = 100;
+    const int MAX_PROJECTILE_VELOCITY = 5;
+    const int PROJECTILE_HIT_RADIUS = 2;
 public:
-    void cast(Champion &owner, sf::Vector2f castLocation);
+    void cast(Game &gamestate, Champion &owner, sf::Vector2f castLocation);
     ProjectileAbility(int manaCost, int castRange, int cooldownTime);
     ~ProjectileAbility();
     
     void update();
-    
 };
 
 #endif /* defined(__League__ProjectileAbility__) */
