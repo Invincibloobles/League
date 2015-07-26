@@ -8,9 +8,11 @@
 
 #include "Champion.h"
 #include <math.h>
-
+#include <array>
 Champion::Champion(int mana, int health, int moveSpeed, Ability &ability)
 :_mana(mana),
+_maxMana(mana),
+_maxHealth(health),
 _health(health),
 _ability(&ability)
 {
@@ -169,4 +171,13 @@ void Champion::draw(sf::RenderTexture &texture)
     championShape.setPosition(_location.x - 10, _location.y - 10);
     championShape.setFillColor(sf::Color(99, 184, 255));
     texture.draw(championShape);
+}
+
+std::array<std::pair<int, float>, 1> Champion::getAbilityCooldowns() const
+{
+    // array because later it will be larger than 1
+    int cd = _ability->getCurrentCooldownTimer();
+    float percentage = _ability->getCurrentCooldownPercentage();
+    std::array<std::pair<int, float>, 1> cooldownInfo = { { {cd, percentage} } };
+    return cooldownInfo;
 }

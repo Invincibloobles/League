@@ -14,11 +14,13 @@ Game::Game()
 {
     ProjectileAbility *ability = new ProjectileAbility(1, 2, 300);
     _champion = new Champion(100, 100, 5, *ability);
+    _hud = new HUD();
 }
 
 Game::~Game()
 {
     delete _champion;
+    delete _hud;
 }
 
 void Game::update()
@@ -54,6 +56,8 @@ void Game::draw(sf::RenderTexture &texture)
     for (projIter = _registeredProjectiles.begin(); projIter != _registeredProjectiles.end(); ++projIter) {
         (*projIter)->draw(texture);
     }
+    _hud->setInfo(*_champion);
+    _hud->draw(texture);
     texture.display();
 }
 

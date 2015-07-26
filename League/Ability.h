@@ -27,6 +27,7 @@ public:
     
     inline int getCooldownTime() const {return _cooldownTime;};
     inline int getCurrentCooldownTimer() const {return _currentCooldownTimer;};
+    inline float getCurrentCooldownPercentage() const { return 1 - (float)_currentCooldownTimer/_cooldownTime;};
     inline void setCurrentCooldownTimer(int time) {_currentCooldownTimer = time;};
     inline bool isOnCooldown() const {return (_currentCooldownTimer > 0);};
 };

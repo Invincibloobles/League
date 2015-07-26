@@ -18,7 +18,7 @@ class Game;
 class Champion {
 private:
     sf::Vector2f _location;
-	int _mana, _health;
+	int _mana, _health, _maxHealth, _maxMana;
     Ability* _ability;
     sf::Vector2f const * _targetPosition;
     std::map <std::string, int> _baseStats;
@@ -33,6 +33,9 @@ public:
 	Champion(int mana, int health, int moveSpeed, Ability &ability);
 	~Champion();
     
+    inline int getCurrentHealth() const { return _health; };
+    inline int getMaxHealth() const { return _maxHealth; };
+    std::array<std::pair<int, float>, 1> getAbilityCooldowns() const;
     void setLocation(sf::Vector2f location);
     const sf::Vector2f getLocation() const;
     void castAbility(Game &gamestate, sf::Vector2f castLocation);

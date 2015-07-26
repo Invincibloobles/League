@@ -15,8 +15,11 @@
 		83597B3B1B24C7AD00F5A2BA /* Projectile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83597B391B24C7AD00F5A2BA /* Projectile.cpp */; };
 		838C461D1AFD3C2600C12047 /* StatModifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838C461B1AFD3C2600C12047 /* StatModifier.cpp */; };
 		838C46211AFD484600C12047 /* DecayingStatModifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 838C461F1AFD484600C12047 /* DecayingStatModifier.cpp */; };
+		839A426A1B570A7700F702C4 /* HUD.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 839A42681B570A7700F702C4 /* HUD.cpp */; };
+		839A426C1B570DDC00F702C4 /* sansation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 839A426B1B570DDC00F702C4 /* sansation.ttf */; };
 		83DB6B151B2DB93100E8824F /* ProjectileAbility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83DB6B131B2DB93100E8824F /* ProjectileAbility.cpp */; };
 		83DB6B181B2DB99B00E8824F /* Game.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83DB6B161B2DB99B00E8824F /* Game.cpp */; };
+		83E84E2D1B652CC2002942A8 /* AbilityDisplay.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83E84E2B1B652CC2002942A8 /* AbilityDisplay.cpp */; };
 		83E9A6F41B08DDEA00810CCF /* FixedDurationModifier.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83E9A6F21B08DDEA00810CCF /* FixedDurationModifier.cpp */; };
 		83F601051AF65F2A00AFCC8F /* SpeedBoostAbility.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 83F601031AF65F2A00AFCC8F /* SpeedBoostAbility.cpp */; };
 /* End PBXBuildFile section */
@@ -40,10 +43,15 @@
 		838C461E1AFD3CC200C12047 /* ModifierType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ModifierType.h; sourceTree = "<group>"; };
 		838C461F1AFD484600C12047 /* DecayingStatModifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = DecayingStatModifier.cpp; sourceTree = "<group>"; };
 		838C46201AFD484600C12047 /* DecayingStatModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DecayingStatModifier.h; sourceTree = "<group>"; };
+		839A42681B570A7700F702C4 /* HUD.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = HUD.cpp; sourceTree = "<group>"; };
+		839A42691B570A7700F702C4 /* HUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HUD.h; sourceTree = "<group>"; };
+		839A426B1B570DDC00F702C4 /* sansation.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = sansation.ttf; sourceTree = "<group>"; };
 		83DB6B131B2DB93100E8824F /* ProjectileAbility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ProjectileAbility.cpp; sourceTree = "<group>"; };
 		83DB6B141B2DB93100E8824F /* ProjectileAbility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProjectileAbility.h; sourceTree = "<group>"; };
 		83DB6B161B2DB99B00E8824F /* Game.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Game.cpp; sourceTree = "<group>"; };
 		83DB6B171B2DB99B00E8824F /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		83E84E2B1B652CC2002942A8 /* AbilityDisplay.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AbilityDisplay.cpp; sourceTree = "<group>"; };
+		83E84E2C1B652CC2002942A8 /* AbilityDisplay.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AbilityDisplay.h; sourceTree = "<group>"; };
 		83E9A6F21B08DDEA00810CCF /* FixedDurationModifier.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = FixedDurationModifier.cpp; sourceTree = "<group>"; };
 		83E9A6F31B08DDEA00810CCF /* FixedDurationModifier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FixedDurationModifier.h; sourceTree = "<group>"; };
 		83F601031AF65F2A00AFCC8F /* SpeedBoostAbility.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SpeedBoostAbility.cpp; sourceTree = "<group>"; };
@@ -83,6 +91,7 @@
 		832C94D01ACEB710007C0295 /* League */ = {
 			isa = PBXGroup;
 			children = (
+				839A42671B570A6B00F702C4 /* HUD */,
 				83F601061AF65F4300AFCC8F /* Abilities */,
 				83597B381B24C77D00F5A2BA /* Champion */,
 				83597B371B24C77300F5A2BA /* Modifiers */,
@@ -106,6 +115,7 @@
 		832C94D81ACEB710007C0295 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				839A426B1B570DDC00F702C4 /* sansation.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -140,6 +150,17 @@
 				832C94F51ACEB7A0007C0295 /* Champion.h */,
 			);
 			name = Champion;
+			sourceTree = "<group>";
+		};
+		839A42671B570A6B00F702C4 /* HUD */ = {
+			isa = PBXGroup;
+			children = (
+				839A42681B570A7700F702C4 /* HUD.cpp */,
+				839A42691B570A7700F702C4 /* HUD.h */,
+				83E84E2B1B652CC2002942A8 /* AbilityDisplay.cpp */,
+				83E84E2C1B652CC2002942A8 /* AbilityDisplay.h */,
+			);
+			name = HUD;
 			sourceTree = "<group>";
 		};
 		83DB6B0F1B2DB85F00E8824F /* Base */ = {
@@ -242,6 +263,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				839A426C1B570DDC00F702C4 /* sansation.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +298,8 @@
 				832C94D71ACEB710007C0295 /* main.cpp in Sources */,
 				832C94FB1ACEB7A0007C0295 /* Champion.cpp in Sources */,
 				83DB6B151B2DB93100E8824F /* ProjectileAbility.cpp in Sources */,
+				839A426A1B570A7700F702C4 /* HUD.cpp in Sources */,
+				83E84E2D1B652CC2002942A8 /* AbilityDisplay.cpp in Sources */,
 				832C94FA1ACEB7A0007C0295 /* Ability.cpp in Sources */,
 				838C461D1AFD3C2600C12047 /* StatModifier.cpp in Sources */,
 				8331E3991B4978D800E278EF /* SkillshotProjectile.cpp in Sources */,

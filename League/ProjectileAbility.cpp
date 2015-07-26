@@ -32,6 +32,7 @@ void ProjectileAbility::cast(Game &gamestate, Champion &owner, sf::Vector2f cast
 {
     std::cout << "ProjectileAbility casted\n";
     setCurrentCooldownTimer(getCooldownTime());
+    // If cast location is the same as the own location, this needs to exit without casting!!
     SkillshotProjectile * const projectile = new SkillshotProjectile(owner.getLocation(), castLocation, MAX_PROJECTILE_VELOCITY, PROJECTILE_HIT_RADIUS, MAX_RANGE);
     _projectiles.push_back(projectile);
     gamestate.registerProjectile(*projectile);
@@ -40,6 +41,8 @@ void ProjectileAbility::cast(Game &gamestate, Champion &owner, sf::Vector2f cast
 
 void ProjectileAbility::update()
 {
+    // currently starts cooldown immediately after cast. Could wait until projectile has died perhaps
+    
     int cooldownTimer = getCurrentCooldownTimer();
     if (cooldownTimer > 0) {
         cooldownTimer--;

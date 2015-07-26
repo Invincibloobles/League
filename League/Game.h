@@ -12,6 +12,7 @@
 #include <iostream>
 #include "Champion.h"
 #include "Projectile.h"
+#include "HUD.h"
 
 class Game {
     Champion *_champion;
@@ -21,6 +22,8 @@ class Game {
     
     //collision lists possibly?
     std::vector<Projectile*> _registeredProjectiles;
+    // HUD needs to be in it's own View
+    HUD *_hud;
     
 public:
     Game();
@@ -32,7 +35,6 @@ public:
     
     void registerProjectile(Projectile &projectile);
     void processProjectileCollisions();
-    
 };
 
 #endif /* defined(__League__Game__) */
